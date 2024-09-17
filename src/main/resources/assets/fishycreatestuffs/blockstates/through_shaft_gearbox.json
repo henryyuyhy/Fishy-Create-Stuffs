@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "axis=x,facing=north": {
+      "model": "fishycreatestuffs:block/through_shaft_gearbox/right",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,facing=south": {
+      "model": "fishycreatestuffs:block/through_shaft_gearbox/left",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,facing=down": {
+      "model": "fishycreatestuffs:block/through_shaft_gearbox/down",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,facing=up": {
+      "model": "fishycreatestuffs:block/through_shaft_gearbox/down",
+      "x": 270,
+      "y": 90
+    },
+    "axis=y,facing=south": {
+      "model": "fishycreatestuffs:block/through_shaft_gearbox/up"
+    },
+    "axis=y,facing=west": {
+      "model": "fishycreatestuffs:block/through_shaft_gearbox/right"
+    },
+    "axis=y,facing=north": {
+      "model": "fishycreatestuffs:block/through_shaft_gearbox/down"
+    },
+    "axis=y,facing=east": {
+      "model": "fishycreatestuffs:block/through_shaft_gearbox/left"
+    },
+    "axis=z,facing=west": {
+      "model": "fishycreatestuffs:block/through_shaft_gearbox/right",
+      "x": 90
+    },
+    "axis=z,facing=east": {
+      "model": "fishycreatestuffs:block/through_shaft_gearbox/left",
+      "x": 90
+    },
+    "axis=z,facing=down": {
+      "model": "fishycreatestuffs:block/through_shaft_gearbox/down",
+      "x": 90
+    },
+    "axis=z,facing=up": {
+      "model": "fishycreatestuffs:block/through_shaft_gearbox/down",
+      "x": 270
+    }
+  }
+}
