@@ -1,5 +1,7 @@
 package com.yu.fishycreatestuffs.content.throughshaftgearbox;
 
+import com.simibubi.create.content.contraptions.ITransformableBlock;
+import com.simibubi.create.content.contraptions.StructureTransform;
 import com.yu.fishycreatestuffs.BlockEntityTypes;
 import com.simibubi.create.content.kinetics.base.GeneratingKineticBlockEntity;
 import com.simibubi.create.content.kinetics.base.KineticBlock;
@@ -18,6 +20,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -33,7 +36,7 @@ import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import net.fabricmc.fabric.api.block.BlockPickInteractionAware;
 
-public class ThroughShaftGearboxBlock extends KineticBlock implements IBE<ThroughShaftGearboxEntity>, BlockPickInteractionAware  {
+public class ThroughShaftGearboxBlock extends KineticBlock implements IBE<ThroughShaftGearboxEntity>, BlockPickInteractionAware, ITransformableBlock {
 
     public static final EnumProperty<Axis> AXIS = BlockStateProperties.AXIS;
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
@@ -130,6 +133,26 @@ public class ThroughShaftGearboxBlock extends KineticBlock implements IBE<Throug
         return originalState
                 .setValue(AXIS, VoxelShaper.axisAsFace(originalState.getValue(AXIS)).getClockWise(rotateAxis).getAxis())
                 .setValue(FACING, originalState.getValue(FACING).getClockWise(rotateAxis));
+    }
+
+
+
+    @Override
+    public BlockState transform(BlockState state, StructureTransform transform) {
+        Direction facing = state.getValue(FACING);
+        Axis axis = state.getValue(AXIS);
+        facing = rotate(facing, transform.rotationAxis, transform.rotation);
+        axis = rotate(VoxelShaper.axisAsFace(axis), transform.rotationAxis, transform.rotation).getAxis();
+        return state.setValue(FACING, facing).setValue(AXIS, axis);
+    } //thanks duquee
+
+    public static Direction rotate(Direction direction, Direction.Axis axis, Rotation rotation) {
+        return switch (rotation) {
+            case CLOCKWISE_90 -> direction.getClockWise(axis);
+            case COUNTERCLOCKWISE_90 -> direction.getCounterClockWise(axis);
+            case CLOCKWISE_180 -> axis == direction.getAxis() ? direction : direction.getOpposite();
+            case NONE -> direction;
+        };
     }
 
     @Override
