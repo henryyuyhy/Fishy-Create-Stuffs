@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[${forge_version},)"
+#issueTrackerURL = ""
+license = "Insert License Here"
+
+[[mods]]
+modId = "fishycreatestuffs"
+version = "${version}"
+displayName = "Fishy Create Stuffs"
+authors = "yu"
+description = '''
+This is an example description! Tell everyone what your mod is about!
+'''
+logoFile = "icon.png"
+
+[[dependencies.fishycreatestuffs]]
+modId = "forge"
+mandatory = true
+versionRange = "[${forge_version},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.fishycreatestuffs]]
+modId = "minecraft"
+mandatory = true
+versionRange = "${minecraft_version}"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.fishycreatestuffs]]
+modId="create"
+mandatory=true
+versionRange="*"
+ordering="AFTER"
+side="BOTH"
