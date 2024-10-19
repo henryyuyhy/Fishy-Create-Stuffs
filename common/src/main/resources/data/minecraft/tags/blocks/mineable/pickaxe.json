@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "fishycreatestuffs:through_shaft_gearbox"
+    "fishycreatestuffs:through_shaft_gearbox",
+    "fishycreatestuffs:train_stair"
   ]
 }
