@@ -5,6 +5,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.yu.fishycreatestuffs.content.throughshaftgearbox.ThroughShaftGearboxBlock;
+import com.yu.fishycreatestuffs.content.trainstair.TrainStairBlock;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.material.MapColor;
 import static com.simibubi.create.foundation.data.AssetLookup.partialBaseModel;
@@ -30,6 +31,15 @@ public class Blocks {
 			//.simpleItem()
             .register();
 
+	public static final BlockEntry<TrainStairBlock> TRAIN_STAIR_BLOCK = REGISTRATE.block("train_stair", TrainStairBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.addLayer(() -> RenderType::cutoutMipped)
+			.properties(p -> p.noOcclusion().mapColor(MapColor.STONE))
+			.lang("Train Stair")
+			.blockstate((c, p) -> axisBlock(c, p, $ -> partialBaseModel(c, p), false))
+			.item()
+			.transform(customItemModel())
+			.register();
 
 
 	static {
