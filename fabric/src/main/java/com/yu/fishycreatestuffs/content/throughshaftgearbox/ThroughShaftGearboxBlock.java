@@ -47,8 +47,8 @@ public class ThroughShaftGearboxBlock extends KineticBlock implements IBE<Throug
     //       |
     // I hope I explained it clearly
 
-    public ThroughShaftGearboxBlock(Properties properties) {
-        super(properties);
+    public ThroughShaftGearboxBlock(Properties petai) {
+        super(petai); //name of a friend
         this.registerDefaultState(this.defaultBlockState()
                 .setValue(AXIS, Axis.Y)
                 .setValue(FACING, Direction.NORTH));
