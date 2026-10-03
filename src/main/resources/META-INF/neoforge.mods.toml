@@ -1,0 +1,35 @@
+# NeoForge 21.1.x (Minecraft 1.21.1) requires an explicit modLoader / loaderVersion.
+# javafml only became the implicit default in 21.11, so leaving these out makes the
+# client refuse to load the mod with "Missing ModLoader".
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="${mod_authors}"
+description='''${mod_description}'''
+logoFile="icon.png"
+
+[[dependencies.${mod_id}]]
+modId="neoforge"
+type="required"
+versionRange="${neo_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="minecraft"
+type="required"
+versionRange="${minecraft_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="create"
+type="required"
+versionRange="${create_version_range}"
+ordering="NONE"
+side="BOTH"

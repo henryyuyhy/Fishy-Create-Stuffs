@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "i": {
+            "item": "create:iron_sheet"
+        },
+
+        "a": {
+            "item": "create:andesite_alloy"
+        }
+    },
+    "pattern": [
+        "   ",
+        "aia",
+        "   "
+    ],
+    "result": {
+        "id": "fishycreatestuffs:train_stair"
+    },
+    "show_notification": true
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fishycreatestuffs:block/train_stair/model"
+    },
+    "facing=east": {
+      "model": "fishycreatestuffs:block/train_stair/model",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "fishycreatestuffs:block/train_stair/model",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fishycreatestuffs:block/train_stair/model",
+      "y": 270
+    }
+  }
+}
